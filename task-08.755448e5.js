@@ -1,0 +1,2 @@
+!function(){var e=document.querySelector(".login-form"),l=e.querySelector('input[name="email"]'),r=e.querySelector('input[name="password"]');e.addEventListener("submit",(function(u){if(u.preventDefault(),""!==l.value&&""!==r.value){var a={email:l.value,password:r.value};console.log(a),e.requestFullscreen()}else alert("Всі поля повинні бути заповнені")}))}();
+//# sourceMappingURL=task-08.755448e5.js.map
