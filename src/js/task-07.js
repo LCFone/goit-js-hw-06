@@ -1,4 +1,4 @@
-const fontSizeControl = document.querySelector('#fontSizeControl');
+const fontSizeControl = document.querySelector('#font-size-control');
 const text = document.querySelector('#text');
 
 // встановлюю початковий розмір тексту
