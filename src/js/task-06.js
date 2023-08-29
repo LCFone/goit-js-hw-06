@@ -1,21 +1,39 @@
-// створюю посилання на елемент ДОМ
-const validationInput = document.querySelector('#validation-input');
+// отримую елемент інпуту
+const inputRef = document.querySelector("#validation-input");
 
-// додаю подію блур до інпута
-validationInput.addEventListener('blur', function () {
-    // отрумую поточне значення
-    const inputValue = validationInput.Value;
+// додаю слухача події blur
+inputRef.addEventListener("blur", (event) => {
 
-    // отримаю кількість імпутів у інпуті
-    if (inputValue.length === requiredLenght) {
-        // при вырный кылькосты символыв добавляю клас "Валыд" ы видялаю "Ынвалыд"
-        validationInput.classList.add('valid');
-        validationInput.classList.remove('invalid');
-    }
-    else
-{
-// в іншому випадку- додаю клас "Інвалід" та видаляю "Вілід"
-validationInput.classList.add('invalid');
-validationInput.classList.remove('valid');
-}
+  // перевіряю відповідність кількості символів у введеному тексті
+  if (Number(event.target.dataset.length) === event.target.value.length) {
+
+    // якщо все вірно, то додаю клас valid і видаляю клас invalid
+    addOrRemoveClassList("valid", "invalid");
+
+  } else if (!event.target.value.length) {
+    // якщо елемент інпут не містить жодного символу, то видаляєю обидва класи
+
+    removeAllClassList("invalid", "valid");
+  } else {
+
+    // якщо кількість символів у тексті не відповідає потрібному, то додаю клас invalid
+    addOrRemoveClassList("invalid", "valid");
+  }
 });
+
+// функція додає клас add і видаляє клас remove з інпуту
+function addOrRemoveClassList(add, remove) {
+
+  // додаю клас add до елемента інпуту
+  inputRef.classList.add(add);
+
+  // видаляю клас remove з інпуту
+  inputRef.classList.remove(remove);
+}
+
+// функція видаляє класи два класи з інпуту
+function removeAllClassList(classOne, classTwo) {
+
+  // видаляю обидва класи з інпуту
+  inputRef.classList.remove(classOne, classTwo);
+}
