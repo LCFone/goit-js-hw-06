@@ -24,6 +24,6 @@ loginForm.addEventListener('submit', function (event) {
     // dbdj;e lfyys d rjycjkm
     console.log(formData);
 
-    // очищаю значення полів форми
-    loginForm.requestFullscreen();
+    // очищаю значення полів форми методом reset()
+    loginForm.reset();
 });

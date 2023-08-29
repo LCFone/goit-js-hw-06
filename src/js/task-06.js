@@ -4,7 +4,7 @@ const validationInput = document.querySelector('#validation-input');
 // додаю подію блур до інпута
 validationInput.addEventListener('blur', function () {
     // отрумую поточне значення
-    const inputValue = validationInput.ariaValue;
+    const inputValue = validationInput.Value;
 
     // отримаю кількість імпутів у інпуті
     if (inputValue.length === requiredLenght) {
